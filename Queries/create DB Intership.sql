@@ -7,22 +7,22 @@ use Intership;
 
 create table Person(
 
-IdPerson int identity (1,1) not null,
+Dni nvarchar (8) not null,
 FirstName nvarchar (50) not null,
 LastName nvarchar (50) not null,
 
-primary key (IdPerson) 
+primary key (Dni) 
 
 );
 
 create table Student(
 
 IdStudent int identity (1,1) not null,
-IdPerson int not null,
+IdPerson nvarchar (8) not null,
 Prom float not null,
 
 primary key (IdStudent),
-foreign key (IdPerson) references Person (IdPerson)
+foreign key (IdPerson) references Person (Dni)
 
 );
 
